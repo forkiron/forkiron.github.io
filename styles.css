@@ -1,0 +1,157 @@
+
+body {
+    font-family: Lato;
+    height: 100%;
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flexbox;
+
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+    
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #666565;
+  }
+
+
+#intro {
+    margin-top: 0px;
+    background-color: black;
+    /*background-image: url('images/testmountains.jpg');*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 99.5vw;
+    min-height: 100vh;
+}
+#experiences {
+    background-color: rgb(19, 18, 18);
+    width: 99.5vw;
+    min-height: 100vh;
+}
+#followName {
+    text-shadow: 2px 2px 5px #FF7F50;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    word-spacing: 5px;
+    padding: 20px;
+    padding-left: 50px;
+    width: 30;
+    
+
+}
+
+button, input[type="submit"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+#hellopopup {
+    visibility: hidden;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+#hellopopup.show {
+    visibility: visible;
+}
+#introPhrase {
+    position: absolute;
+    margin-top: 300px;
+    margin-left: 300px;
+    font-size: 250px;
+    transition: 0s color;
+    transition-delay: 0.5s;
+    transition-duration: 1s;
+    
+}
+
+#introPhrase:hover {
+    /* Eventually make this into a thing where the text gives a glow when hovered on*/
+    color: black;
+    transition-duration: 1s;
+    transition-delay: 0.5s;
+}
+
+
+#arrow {
+    position: absolute;
+    margin-left: 50%;
+    margin-top: 1300px;
+    border: solid white;
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    padding: 10px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transition-duration: 3s;
+    transition-delay: 1s;
+    
+
+}
+
+#mainBig {
+    position: absolute;
+    color: #FF7F50;
+    font-size: 200px;
+    margin-left: 1200px;
+    margin-top: 700px;
+    
+}
+#mainName {
+    color: white;
+}
+
+
+#profilePhoto {
+    position: absolute;
+    width: 800px;
+    object-fit: cover;
+    border-radius: 40px;
+
+}
+
+#pfpMove {
+    padding-left: 400px;
+    padding-top: 900px;
+    position: absolute;
+
+}
+#experiences {
+    padding-top: 5000px;
+}
+    
+
+
+
+
+#aboutContain {
+    position:relative;
+    padding: 70px;
+    width: 800px;
+    background-color: rgba(0,0,0,.5);
+    color: #fff;
+    margin-left: 100px;
+    border-radius: 20px;
+    margin-top: 1500px;
+    
+}
+.normalWord {
+    font-size: 34px;
+}
