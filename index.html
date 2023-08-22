@@ -16,47 +16,78 @@
         </nav>    
 
     
-        <section id="intro">
+        <section id="home">
            
             <div id="mainName">
                     <h3 id="introPhrase">Hey, I'm</h3>
-                    <h1 id="mainBig"> <button onclick()="helloFunction()"><strong>Thomas Lenh</strong></button></h1>
+                    <h1 id="mainBig"> <button onclick()="document."><strong>Thomas Lenh</strong></button></h1>
+                    <!--ONclick for possible pop up of me-->
                     <div id="hellopopup">Hello</div>
 
                 
             </div>
-            <div id="arrow"></div>
-                <!-- Give the arrow an animation-->
+            
+            <div class="arrowhover">
+                <button type="button" id="arrow" onclick="scrollfunc()"> </button>
+                <div id="arrow1"></div>
+
+            </div>
+            
+            
+            
+                <!-- Give the arrow an animation e.g. duplicate into 2 arrows when hovered -- make 2 arrrows, one with 0 opacity and make sure they're in the same div so that when user hovers blah blah-->
                 <!--When this arrow drop down thing is clicked, the screen scrolls down -->            
+            <div id="darkgrey"></div>
+            <div id="grey"></div>
         </section>
 
-        <section id="experiences">
-            <div id="pfpMove">
-                <img src="images\thomaspfp.jpg" id="profilePhoto" alt="Thomas Picture">
+        <section id="intro">
+            <div id="navBar" class="hiddenNav">
+                <a href="#intro" style="text-decoration: none;">
+                    <span class="navWord" >Intro</span>
+                </a>
+                <a href="#about" style="text-decoration: none;">
+                    <span class="navWord">About</span>
+                </a>
+                <!-- When user scrolls down and it passes the intro top, then the nav bar fades in-->
+                
+                
+                
+
             </div>
+
+            <div id="profilePhotoCont">
+                <img src="images\thomaspfp.jpg" id="profilePhoto" alt="Thomas Picture">
+                <div class="learnIcon"><p id="learnIconWord">I can't lie, this isn't the most flattering photo of me but the background is nice <strong>(Banff, Alberta)</strong>, so +10 😎 points.</p></div>
+                
+
+            </div>
+        
+            
             <!--https://www.w3schools.com/howto/howto_js_toggle_tex t.asp learn to display experiences-->
             <!--I wanna include a place where it shows before and after photo editing of the display photo I used-->
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur deserunt laudantium sint itaque odio iure voluptates doloribus obcaecati deleniti veniam optio, placeat quos. Repudiandae quo ratione totam voluptate, explicabo aliquid est, consequuntur iusto similique temporibus quasi. Quam, officiis numquam voluptatum rem voluptas at ullam delectus ipsum. Dolorem dolores cumque aliquid a recusandae atque soluta velit maiores iusto natus saepe assumenda ad obcaecati, vitae ab facere fugit eum veniam. Doloribus sint veritatis labore neque rerum delectus eveniet excepturi quos ab, eaque quas odit? Veritatis voluptatum in, cumque incidunt iusto repudiandae pariatur, rem ut officiis unde, excepturi explicabo dolor enim ducimus distinctio?</p>
-            <div id="aboutContain">
-                <!-- I wanna make the about me thing fade in when the website is scrolled-->
-                    <p class="normalWord"> Hey, I'm Thomas, a spontaneous and curious soon-to-be 16 year old! I currently attend Cameron Heights Collegiate Institute (CHCI), and am committed to the IB Diploma Program. </p>
-                    
-                    <br>
-                    <p id="">Want to get to know me better?</p> <!-- Make this a button that people can click-->
+            
+                <div id="aboutContain" class="aboutContain-nofade">
+                    <!-- I wanna make the about me thing fade in when the website is scrolled-->
+                        <span id="aboutWord"> Hey, I'm Thomas, a spontaneous and curious soon-to-be 16 year old! I enjoy photography/videography, playing chess, reading non-fiction, and getting myself into a bunch of new things.</span>
+                        
+            
+                </div>
+            
     
-                    <!-- Include things that I love (ex. badminton) and also include things that I want to do in the future-->
-                    <li>
-                        <ul class="normalWord"> I love seeking opportunities and connections</ul>
-                    </li>
+                    
+        </section>
+        <section id="about">
+<!-- Include things that I love (ex. badminton) and also include things that I want to do in the future-->
+                    
                     <!-- Remember to make "Why I made this website lol"-->
-            </div>
+                    <!-- Make a page for the stuff I do e.g. gif of my chess games-->
             
         </section>
 
 
         <script src="index.js">
-        
-
+    
             
         </script>
 

@@ -5,7 +5,7 @@ body {
     margin:0;
     padding: 0;
     box-sizing: border-box;
-    display: flexbox;
+    
 
 }
 
@@ -13,6 +13,7 @@ body {
     width: 15px;
     
   }
+  /*Change colour when scrolled down to the next section*/
   ::-webkit-scrollbar-track {
     background: transparent;
   }
@@ -24,7 +25,38 @@ body {
   }
 
 
-#intro {
+#darkgrey {
+    position: absolute;
+    width: 99.5vw;
+    height: 3vh;
+    background-color: #080808;;
+    top: 100.01vh;
+}
+#grey {
+    position: absolute;
+    width: 100%;
+    height: 2vh;
+    background-color: #0f0f0f;;
+    top: 102vh;
+}
+#followName {
+    text-shadow: 0.2vh 0.2vh 0.3vh #FF7F50;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    word-spacing: 0.5vh;
+    padding: 2vh;
+    padding-left: 2vh;
+    padding-top: 1vh;
+    width: 30;
+    z-index: 10;
+    font-size: 2.5vh;
+    
+
+}
+
+#home {
     margin-top: 0px;
     background-color: black;
     /*background-image: url('images/testmountains.jpg');*/
@@ -33,23 +65,44 @@ body {
     width: 99.5vw;
     min-height: 100vh;
 }
-#experiences {
-    background-color: rgb(19, 18, 18);
+#intro {
+    background-image: linear-gradient(rgb(19,18,18), rgb(3, 15, 41), rgb(10, 0, 14));
     width: 99.5vw;
-    min-height: 100vh;
+    height: 100vh;
+    
+    
 }
-#followName {
-    text-shadow: 2px 2px 5px #FF7F50;
-    color: white;
+
+/* Add this to your existing CSS */
+#navBar {
     position: fixed;
     top: 0;
-    left: 0;
-    word-spacing: 5px;
+    right: 0;
     padding: 20px;
-    padding-left: 50px;
-    width: 30;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.507);
+    z-index: 9; 
+    width: 100%; 
+    height: 7vh;
+    transition: opacity 0.5s;
     
-
+    
+}
+.hiddenNav {
+    opacity: 0;
+    transition: opacity 0.5s;
+    
+}
+.navWord {
+    color: white;
+    font-size: 4vh; 
+    margin-right: 8vh; 
+    font-style: bold;
+    text-shadow: 0vh 0vh 1vh #FF7F50;
+    
+    
 }
 
 button, input[type="submit"] {
@@ -73,12 +126,15 @@ button, input[type="submit"] {
 }
 #introPhrase {
     position: absolute;
-    margin-top: 300px;
-    margin-left: 300px;
+    margin-top: 22.2vh;
+    margin-left: 13vw;
     font-size: 250px;
     transition: 0s color;
     transition-delay: 0.5s;
     transition-duration: 1s;
+    display: flex;
+    
+    font-size: 20vh;
     
 }
 
@@ -92,27 +148,52 @@ button, input[type="submit"] {
 
 #arrow {
     position: absolute;
-    margin-left: 50%;
-    margin-top: 1300px;
+    left: 50vw;
+    top: 94vh;
     border: solid white;
-    border-width: 0 5px 5px 0;
-    display: inline-block;
-    padding: 10px;
+    border-width: 0 1vh 1vh 0;
+    padding: 1vh;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
-    transition-duration: 3s;
-    transition-delay: 1s;
-    
-
+    animation: fadeIn 10s;
 }
+
+#arrow1 {
+    position: absolute;
+    left: 50vw;
+    top: 94vh;
+    border: solid white;
+    border-width: 0 1vh 1vh 0;
+    padding: 1vh;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.5s ease, top 1s ease
+    
+    
+}
+
+
+.arrowhover:hover #arrow1{
+    opacity: 0.3;
+    top: 91.5vh;
+    transition-duration: 1s;
+    transition: opacity 0.5s ease, top 1s ease;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
 
 #mainBig {
     position: absolute;
     color: #FF7F50;
     font-size: 200px;
-    margin-left: 1200px;
-    margin-top: 700px;
-    
+    left: 42.5vw;
+    top: 40.8vh;
+    font-size: 15vh;
+
 }
 #mainName {
     color: white;
@@ -122,36 +203,66 @@ button, input[type="submit"] {
 #profilePhoto {
     position: absolute;
     width: 800px;
-    object-fit: cover;
     border-radius: 40px;
-
-}
-
-#pfpMove {
-    padding-left: 400px;
-    padding-top: 900px;
-    position: absolute;
-
-}
-#experiences {
-    padding-top: 5000px;
-}
+    top: 120vh;
+    left: 59vw;
     
 
+}
+
+
+
+.learnIcon {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 800px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    border-radius: 40px;
+    height: 800px;
+    top: 120vh;
+    left: 59vw;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    
+
+}
+#learnIconWord{
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    font-size: 65px;
+}
+
+#profilePhotoCont:hover .learnIcon {
+    opacity: 1;
+}
 
 
 
 #aboutContain {
-    position:relative;
-    padding: 70px;
-    width: 800px;
-    background-color: rgba(0,0,0,.5);
-    color: #fff;
-    margin-left: 100px;
-    border-radius: 20px;
-    margin-top: 1500px;
+    position: absolute;
+    width: 44vw;
+    height: 190px;
+    border-radius: 10px;
+    left: 9.6vw;
+    top: 140vh;
+    text-align: center;
     
 }
-.normalWord {
+
+
+.aboutContain-nofade{
+    opacity: 0;
+    transition: opacity 3s ease;
+}
+.aboutContain-nofade.fade{
+    opacity: 1;
+}
+
+#aboutWord {
+    color: #fff;
+    text-shadow: 2px 2px 60px skyblue;
     font-size: 34px;
 }
