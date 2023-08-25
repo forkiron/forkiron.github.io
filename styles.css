@@ -8,12 +8,14 @@ body {
     
 
 }
+html {
+    scroll-behavior: smooth;
 
+}
 ::-webkit-scrollbar {
     width: 15px;
     
   }
-  /*Change colour when scrolled down to the next section*/
   ::-webkit-scrollbar-track {
     background: transparent;
   }
@@ -24,22 +26,7 @@ body {
     background: #666565;
   }
 
-
-#darkgrey {
-    position: absolute;
-    width: 99.5vw;
-    height: 3vh;
-    background-color: #080808;;
-    top: 100.01vh;
-}
-#grey {
-    position: absolute;
-    width: 100%;
-    height: 2vh;
-    background-color: #0f0f0f;;
-    top: 102vh;
-}
-#followName {
+  #followName {
     text-shadow: 0.2vh 0.2vh 0.3vh #FF7F50;
     color: white;
     position: fixed;
@@ -73,6 +60,37 @@ body {
     
 }
 
+
+#about {
+    background-image: linear-gradient(rgb(18, 1, 26), rgb(46, 3, 3));
+    width: 99.5vw;
+    height: 100vh;
+}
+#lightpurple {
+    position: absolute;
+    width: 99.5vw;
+    height: 2vh;
+    background-image: linear-gradient(rgb(10, 0, 14),rgb(18, 0, 26));
+    top: 200.01vh;
+}
+#darkgrey {
+    position: absolute;
+    width: 99.5vw;
+    height: 3vh;
+    background-color: #080808;;
+    top: 100.01vh;
+}
+#grey {
+    position: absolute;
+    width: 99.5vw;
+    height: 2vh;
+    background-color: #0f0f0f;;
+    top: 102vh;
+}
+
+
+
+
 /* Add this to your existing CSS */
 #navBar {
     position: fixed;
@@ -89,22 +107,31 @@ body {
     transition: opacity 0.5s;
     
     
+    
 }
 .hiddenNav {
     opacity: 0;
     transition: opacity 0.5s;
     
 }
+
 .navWord {
     color: white;
     font-size: 4vh; 
     margin-right: 8vh; 
     font-style: bold;
     text-shadow: 0vh 0vh 1vh #FF7F50;
+    transition-duration: 0.5s;
     
     
 }
-
+.navWord:hover{
+    transition-duration: 0.3s;
+    opacity: 0.5;
+    text-shadow: 0vh 0vh 2vh #2e0404;
+    
+}
+/*To remove all default button styling*/
 button, input[type="submit"] {
 	background: none;
 	color: inherit;
@@ -114,15 +141,26 @@ button, input[type="submit"] {
 	cursor: pointer;
 	outline: inherit;
 }
+
 #hellopopup {
+    position: absolute;
+    background-color: rgba(80, 79, 79, 0.808);
+    width: 60vw;
+    font-size: 28vh;
+    font-weight: bold;
+    border-radius: 25px;
+    display: flex;
     visibility: hidden;
-    background-color: black;
+    justify-content: center;
+    align-items: center;
+    top: 15vw;
+    left: 20vw;
     color: white;
     text-align: center;
 }
 
-#hellopopup.show {
-    visibility: visible;
+#mainName{
+    color: white;
 }
 #introPhrase {
     position: absolute;
@@ -195,9 +233,7 @@ button, input[type="submit"] {
     font-size: 15vh;
 
 }
-#mainName {
-    color: white;
-}
+
 
 
 #profilePhoto {
@@ -205,7 +241,7 @@ button, input[type="submit"] {
     width: 800px;
     border-radius: 40px;
     top: 120vh;
-    left: 59vw;
+    right: 12.7vw;
     
 
 }
@@ -253,6 +289,7 @@ button, input[type="submit"] {
 }
 
 
+
 .aboutContain-nofade{
     opacity: 0;
     transition: opacity 3s ease;
@@ -265,4 +302,60 @@ button, input[type="submit"] {
     color: #fff;
     text-shadow: 2px 2px 60px skyblue;
     font-size: 34px;
+}
+
+
+.subheading {
+    position: absolute;
+    font-size: 150px;
+    font-weight: bold;
+    padding: 100px;
+    margin-top: 5vh;
+}
+#subheadingmoreabout{
+    right: 450px;
+    color: #fff;
+
+}
+#subheadingme {
+    right:200px;
+    color: orange;
+    text-shadow: 2px 2px 30px #FF7F50;
+}
+
+.aboutTab {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-size: 60px;
+    right: 300px;
+    margin-top: 30vh;
+    
+}
+#aboutwordtitle{
+    right:1050px;
+}
+
+#hobbieswordtitle{
+    right:625px;
+}
+
+#skillswordtitle{
+    right: 300px;
+}
+
+.aboutTab:hover{
+    text-shadow: 0px 0px 10px #ffffff;
+    transition-duration: 0.1s;
+
+}
+.aboutTabWord{
+    position: absolute;
+    color: white;
+    width: 1000px;
+    right: 300px;
+    margin-top: 500px;
+    font-size: 30px;
+    height: 100%;
+    text-align: right;
+    visibility: hidden;
 }

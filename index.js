@@ -34,7 +34,7 @@ function whenScroll(){
 
 
 // I do this so that the window height (top of window number) is added by one so that when the arrow button is clicked, window size exceeds the intro bottom number (intro total height) which allows for the navbar to fade in. 
-const windowHeightplus = window.innerHeight + 1;
+    const windowHeightplus = window.innerHeight + 1;
 // Get intro 
 const inIntro = document.getElementById('intro');
 // Get navBar
@@ -69,5 +69,47 @@ window.addEventListener("scroll", function() {
 });
     
 whenScroll();
-
 introNav();
+
+//'DOMContentLoaded only allows this code to run when everything in the website is  loaded ( indicates that your web page's structure and basic resources are available for scripting and interaction")
+document.addEventListener("DOMContentLoaded", function() {
+    const mainBig = document.getElementById("mainBig");
+    const hellopopup = document.getElementById("hellopopup");
+    const home = document.getElementById('body');
+    // Listens for a click on 'Thomas Lenh/ mainBig', then when clicked, makes everything disapear except 'hellopopup'
+    mainBig.addEventListener("click", function() {
+      home.style.visibility = 'hidden';
+      hellopopup.style.visibility = 'visible'; 
+      home.style.overflow = 'hidden'; // Prevent scrolling
+
+      
+    });
+    // Listens  for a click on the pop up, makes everything normal again
+    hellopopup.addEventListener("click", function() {
+      hellopopup.style.visibility = "hidden"; 
+      home.style.visibility ='visible';
+      home.style.overflow='auto'; //Allow scrolling
+    });
+  });
+
+
+
+function openTab(tabthatisclicked){
+    const tabshow = document.getElementById(tabthatisclicked);
+    hideothertabs(tabthatisclicked);
+    tabshow.style.visibility = 'visible';
+
+}
+function hideothertabs(donotinclude){
+    const tabs = ['aboutword', 'skillsword', 'hobbiesword']
+
+    tabs.forEach(tab => {
+        if (tab !== donotinclude){
+            const tabfromlist = document.getElementById(tab)
+            tabfromlist.style.visibility = 'hidden'
+            
+        }
+        
+        
+    });
+}

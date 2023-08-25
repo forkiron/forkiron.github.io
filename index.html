@@ -8,7 +8,7 @@
         
         
     </head>
-    <body>
+    <body id="body">
        
 
         <nav>
@@ -20,9 +20,8 @@
            
             <div id="mainName">
                     <h3 id="introPhrase">Hey, I'm</h3>
-                    <h1 id="mainBig"> <button onclick()="document."><strong>Thomas Lenh</strong></button></h1>
-                    <!--ONclick for possible pop up of me-->
-                    <div id="hellopopup">Hello</div>
+                    <h1 id="mainBig"><strong>Thomas Lenh</strong></h1>
+                    <div id="hellopopup">Flash</div>
 
                 
             </div>
@@ -57,7 +56,7 @@
             </div>
 
             <div id="profilePhotoCont">
-                <img src="images\thomaspfp.jpg" id="profilePhoto" alt="Thomas Picture">
+                <img src="images/thomaspfp.jpg" id="profilePhoto" alt="Thomas Picture">
                 <div class="learnIcon"><p id="learnIconWord">I can't lie, this isn't the most flattering photo of me but the background is nice <strong>(Banff, Alberta)</strong>, so +10 😎 points.</p></div>
                 
 
@@ -78,6 +77,29 @@
                     
         </section>
         <section id="about">
+            <div id='lightpurple'>
+            </div>
+
+            <span class="subheading" id="subheadingmoreabout">More About</span>
+            <span class="subheading" id="subheadingme">Me</span>
+
+
+            <button class="aboutTab" id="aboutwordtitle" onclick="openTab('aboutword')">About</button>
+            <button class="aboutTab" id="hobbieswordtitle"onclick="openTab('hobbiesword')">Hobbies</button>
+            <button class="aboutTab"id="skillswordtitle" onclick="openTab('skillsword')">Skills</button>
+
+            <div class="aboutTabWord" id="hobbiesword"><p>Some things that I like to do in my free time are playing badminton, playing chess, engaging in new things, learning, researching,</p></div>
+            <div class="aboutTabWord" id="aboutword"><p>I am a junior attending Cameron Heights Collegiate Institute. I am pursuing the I.B. Diploma Program.</p></div>
+            <div class="aboutTabWord" id="skillsword"><p>Some skills that I hold are, Python, HTML/CSS, Javascript, React Native, SOLIDWORKS (beginner), Git,</p></div>
+            <!-- For each one of the tabs clicked, make a photo fade in of me doing it on the left side-->
+            <!-- also remember to highlight the tab title when it IS  clicked to indicate what tab user is on-->
+
+
+
+
+
+
+
 <!-- Include things that I love (ex. badminton) and also include things that I want to do in the future-->
                     
                     <!-- Remember to make "Why I made this website lol"-->
