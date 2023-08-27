@@ -5,7 +5,8 @@ function scrollfunc(){
 
 } 
 
-const fadeBox = document.querySelectorAll('.aboutContain-nofade')
+
+//Function that determines if the element is in user viewport
 function ifinview(element){
     //Assigns the constant for checking to see if the 'element' is in the view point of user
     const inView = element.getBoundingClientRect()
@@ -17,7 +18,9 @@ function ifinview(element){
     
 }
 
-function whenScroll(){
+function whenScrollIntro(){
+    const fadeBox = document.querySelectorAll('.aboutContain-nofade')
+
     // This basically means for each element selected (there are 2 bc its from queryselectorall)
     fadeBox.forEach(element => {
         //If the element is in view (which in this case is the text box)
@@ -33,8 +36,38 @@ function whenScroll(){
 }
 
 
+function whenScrollAbout() {
+    const titlepart = ['subheadingmore', 'subheadingabout', 'subheadingme'];
+    titlepart.forEach(title => {
+        const currenttitle = document.getElementById(title);
+        if (ifinview(currenttitle)) {
+            if (currenttitle.id === 'subheadingmore') {
+                
+                currenttitle.style.opacity = '1';
+                currenttitle.style.transition = 'opacity 3s ease-out'
+
+            }
+            if (currenttitle.id === 'subheadingabout') {
+                
+                currenttitle.style.opacity = '1';
+                currenttitle.style.transition = 'opacity 8s ease-out'
+            }
+            if (currenttitle.id === 'subheadingme') {
+                
+                currenttitle.style.opacity = '1';
+                currenttitle.style.transition = 'opacity 13s ease-out'
+            }
+            
+        }
+        else{
+            currenttitle.style.opacity = '0'
+        }
+
+    });
+}
+
 // I do this so that the window height (top of window number) is added by one so that when the arrow button is clicked, window size exceeds the intro bottom number (intro total height) which allows for the navbar to fade in. 
-    const windowHeightplus = window.innerHeight + 1;
+const windowHeightplus = window.innerHeight + 1;
 // Get intro 
 const inIntro = document.getElementById('intro');
 // Get navBar
@@ -65,11 +98,13 @@ function introNav() {
 //Makes windows 'listen' for the event 'scroll', which then with 'type function', operates the following functions
 window.addEventListener("scroll", function() {
     introNav();
-    whenScroll();
+    whenScrollIntro();
+    whenScrollAbout();
 });
     
-whenScroll();
+whenScrollIntro();
 introNav();
+whenScrollAbout();
 
 //'DOMContentLoaded only allows this code to run when everything in the website is  loaded ( indicates that your web page's structure and basic resources are available for scripting and interaction")
 document.addEventListener("DOMContentLoaded", function() {
@@ -93,23 +128,47 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 
-
-function openTab(tabthatisclicked){
+// when the tab title is clicked, bring in whatever tab is clicked
+function openTab(tabthatisclicked, tabtitle, tabcolor){
+    //Assign whatever tab is clicked to this constant to be used to set visible
     const tabshow = document.getElementById(tabthatisclicked);
-    hideothertabs(tabthatisclicked);
+    const tabtitleshow = document.getElementById(tabtitle);
+
+    //First, hide all other tabs
+    hideothertabs(tabthatisclicked, tabtitle);
+    //Show the tab that is clicked
+    tabtitleshow.style.textShadow = `0px 0px 20px ${tabcolor}`;
     tabshow.style.visibility = 'visible';
 
 }
-function hideothertabs(donotinclude){
+//hides all tabs except the one that is clicked, hence bringing in 'tabthatisclicked'
+function hideothertabs(donotinclude, donotincludetitle){
+    //Make a list with all the tabs that I have
     const tabs = ['aboutword', 'skillsword', 'hobbiesword']
-
+    const tabtitles = ['aboutwordtitle', 'skillswordtitle', 'hobbieswordtitle']
+    // for each loop (basically for-in) that goes through the list of tabs that I have 
     tabs.forEach(tab => {
+        //if the tab in the list happens to NOT be equal to 'tabthatisclicked', proceed. This excludes 'tabthatisclicked' from being hidden
         if (tab !== donotinclude){
-            const tabfromlist = document.getElementById(tab)
-            tabfromlist.style.visibility = 'hidden'
+            //Find what tab it is by getting element with the id from list
+            const tabfromlist = document.getElementById(tab);
+            //make it hidden
+            tabfromlist.style.visibility = 'hidden';
+            
             
         }
-        
-        
     });
+    //Pre much the same thing as above except with textshadow and tab titles
+    tabtitles.forEach(tabtitle => {
+
+        if (tabtitle !==donotincludetitle){
+            const tabtitlefromlist = document.getElementById(tabtitle);
+            //Remove the textshadow, but still enables :hover hence not using 'none'
+            tabtitlefromlist.style.textShadow ='';
+
+        }
+    });
+        
+        
+    
 }

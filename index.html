@@ -80,19 +80,30 @@
             <div id='lightpurple'>
             </div>
 
-            <span class="subheading" id="subheadingmoreabout">More About</span>
+            <span class="subheading" id="subheadingmore">More</span>
+            <span class="subheading" id="subheadingabout">About</span>
             <span class="subheading" id="subheadingme">Me</span>
 
 
-            <button class="aboutTab" id="aboutwordtitle" onclick="openTab('aboutword')">About</button>
-            <button class="aboutTab" id="hobbieswordtitle"onclick="openTab('hobbiesword')">Hobbies</button>
-            <button class="aboutTab"id="skillswordtitle" onclick="openTab('skillsword')">Skills</button>
+            <button class="aboutTab" class="aboutTabclick" id="aboutwordtitle" onclick="openTab('aboutword', 'aboutwordtitle', '#b80808')">About</button>
+            <button class="aboutTab" class="aboutTabclick" id="hobbieswordtitle"onclick="openTab('hobbiesword', 'hobbieswordtitle', '#9c440a')">Hobbies</button>
+            <button class="aboutTab" class="aboutTabclick" id="skillswordtitle" onclick="openTab('skillsword', 'skillswordtitle', '#9c8e0a')">Skills</button>
 
-            <div class="aboutTabWord" id="hobbiesword"><p>Some things that I like to do in my free time are playing badminton, playing chess, engaging in new things, learning, researching,</p></div>
-            <div class="aboutTabWord" id="aboutword"><p>I am a junior attending Cameron Heights Collegiate Institute. I am pursuing the I.B. Diploma Program.</p></div>
+            <div class="aboutTabWord" id="hobbiesword">
+                <h3>Badminton</h3>
+                <p>I currently play badminton at KC Badminton Club as a regional level player. In addition to training regularly, I enjoy leisurely matches with friends and family.</p>
+                <h3>Chess</h3>
+                <p>My peak rating is 1400 (chess.com).  </p>
+                <h3>Reading</h3>
+                <p>I typically enjoy reading psychology and finance, occasionally engaging in fantasy as well. I highly recommend reading "The Alchemist" by Paulo Coelho and "The 80/20 Principle" by Richard Koch.
+                </p>
+                <p>Some things that I like to do in my free time are playing badminton, playing chess, engaging in new things, learning, researching,</p>
+            </div>
+            <div class="aboutTabWord" id="aboutword">
+                <p>I am a junior attending Cameron Heights Collegiate Institute. I am pursuing the I.B. Diploma Program.</p>
+            </div>
             <div class="aboutTabWord" id="skillsword"><p>Some skills that I hold are, Python, HTML/CSS, Javascript, React Native, SOLIDWORKS (beginner), Git,</p></div>
             <!-- For each one of the tabs clicked, make a photo fade in of me doing it on the left side-->
-            <!-- also remember to highlight the tab title when it IS  clicked to indicate what tab user is on-->
 
 
 
