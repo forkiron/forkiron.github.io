@@ -1,3 +1,13 @@
+@keyframes meunderlineback {
+    0% {
+        width: 1050px; /* Start with full width */
+        opacity: 1;
+    }
+    100% {
+        width: 0; /* Shrink width to 0 */
+        opacity: 0;
+    }
+}
 
 body {
     font-family: Lato;
@@ -8,6 +18,7 @@ body {
     
 
 }
+
 html {
     scroll-behavior: smooth;
 
@@ -171,17 +182,66 @@ button, input[type="submit"] {
     transition-delay: 0.5s;
     transition-duration: 1s;
     display: flex;
-    
     font-size: 20vh;
+    animation: slideInAndSwayIntro 2s cubic-bezier(0.3, 0.6, 0.7, 0.1) /*Measures speeed*/forwards, fadeIn 3s ease-in-out infinite, sway 1.5s infinite alternate;
+
     
 }
 
+
+@keyframes slideInAndSwayIntro {
+    0% {
+        margin-left: -100%;
+        opacity: 0;
+    }
+    100% {
+        margin-left: 13.5vw;
+        opacity: 1;
+    }
+}
+
+@keyframes sway {
+    100% {
+        transform: translateX(6vw);
+    }
+}
+
+
 #introPhrase:hover {
-    /* Eventually make this into a thing where the text gives a glow when hovered on*/
     color: black;
     transition-duration: 1s;
     transition-delay: 0.5s;
 }
+
+#mainBig {
+    position: absolute;
+    color: #FF7F50;
+    
+    font-size: 200px;
+    right: 12.5vw;
+    top: 40.8vh;
+    font-size: 15vh;
+    animation: fadeIn 5s, swayUpDown 1.5s infinite alternate;
+
+}
+#mainBigE {
+    position: absolute;
+    color: #000000;
+    text-shadow: 0px 0px 20px rgb(241, 186, 67);
+    font-size: 200px;
+    right: 20.595vw;
+    top: 40.8vh;
+    font-size: 15vh;
+    opacity: 0;
+    animation:  swayUpDown 1.5s infinite alternate, fadeIn 0.1s infinite, pauseFadein 2s ;
+
+}
+@keyframes swayUpDown {
+    100% {
+        transform: translateY(1vw);
+    }
+}
+
 
 
 #arrow {
@@ -221,18 +281,9 @@ button, input[type="submit"] {
 
 @keyframes fadeIn {
     0% { opacity: 0; }
+    
     100% { opacity: 1; }
   }
-
-#mainBig {
-    position: absolute;
-    color: #FF7F50;
-    font-size: 200px;
-    left: 42.5vw;
-    top: 40.8vh;
-    font-size: 15vh;
-
-}
 
 
 
@@ -294,7 +345,7 @@ button, input[type="submit"] {
     opacity: 0;
     transition: opacity 3s ease;
 }
-.aboutContain-nofade.fade{
+.fade{
     opacity: 1;
 }
 
@@ -309,13 +360,17 @@ button, input[type="submit"] {
     position: absolute;
     font-size: 150px;
     font-weight: bold;
-    padding: 100px;
-    margin-top: 5vh;
+    margin-top: 12vh;
+    margin-right: 3.3vw;
 }
 
-
+#subheadingContainer{
+    position: absolute;
+    
+    right: 10vw;
+}
 #subheadingmore{
-    right: 900px;
+    right: 600px;
     color: #fff;
     text-shadow: 0px 0px 30px #424241;
     opacity: 0;
@@ -324,7 +379,7 @@ button, input[type="submit"] {
 
 }
 #subheadingabout {
-    right: 450px;
+    right: 150px;
     text-shadow: 0px 0px 30px #888888;
     color: #ffffff;
     opacity: 0;
@@ -332,13 +387,57 @@ button, input[type="submit"] {
 
 }
 #subheadingme {
-    right:200px;
+    right:-100px;
     color: orange;
     text-shadow: 2px 2px 30px #FF7F50;
     opacity: 0;
     transition: opacity 7s ease;
 }
+#subheadingmeContainer {
+    position: absolute;
+}
 
+
+
+@keyframes meunderlineslide{
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 1050px;
+        opacity: 1;
+    }
+}
+
+#meUnderline {
+    opacity: 0;
+    width: 1050px;
+    right: 10vw;
+    position: absolute;
+    background-image: linear-gradient(45deg, #e7b019, #af4261);
+    box-shadow: 0px 0px 20px #ec8f6d;;
+    margin-top: 360px;
+    height: 20px;
+    z-index: 1000;
+    
+    
+}
+
+.invisibleUnderline {
+    animation: meunderlineback 2s ease-in-out forwards;
+}
+
+
+
+.visibleUnderline {
+    animation: meunderlineslide 3s ease-out forwards;
+    
+}
+#subheadingme:hover + #meUnderline {
+    opacity: 1;
+    transition-duration: 1s;
+}
 
 .aboutTab {
     position: absolute;
@@ -367,7 +466,67 @@ button, input[type="submit"] {
     right: 300px;
 }
 
+#aboutUnderline {
+    position: absolute;
+    background-image: linear-gradient(45deg, #b80808, #af4261);
+    width: 165px;
+    box-shadow: 0px 0px 20px #c90a0a;;
+    margin-top: 35vh;
+    right: 36.4vw;
+    height: 10px;
+    opacity: 0;
+}
+@keyframes aboutUnderlineIn{
+    0% {
+        opacity: 0;
+        width: 0;
+    }
+    100% {
+        width: 165px;
+        opacity: 1;
+    }
+}
+#skillsUnderline {
+    position: absolute;
+    background-image: linear-gradient(45deg, #f0e589, #eee016);
+    width: 140px;
+    box-shadow: 0px 0px 20px #bfd400;;
+    margin-top: 35vh;
+    right: 10.3vw;
+    height: 10px;
+    opacity: 0;
+}
+@keyframes skillsUnderlineIn{
+    0% {
+        opacity: 0;
+        width: 0;
+    }
+    100% {
+        width: 140px;
+        opacity: 1;
+    }
+}
+#hobbiesUnderline {
+    position: absolute;
+    background-image: linear-gradient(45deg, #9c440a, #e9bd44);
+    width: 220px;
+    box-shadow: 0px 0px 20px #d39b00;;
+    margin-top: 35vh;
+    right: 21.6vw;
+    height: 10px;
+    opacity: 0;
+}
 
+@keyframes hobbiesUnderlineIn{
+    0% {
+        opacity: 0;
+        width: 0;
+    }
+    100% {
+        width: 220px;
+        opacity: 1;
+    }
+}
 .aboutTabWord{
     position: absolute;
     color: white;
